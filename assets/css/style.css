@@ -1790,7 +1790,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-inline: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 25px;
   }
 
@@ -1808,7 +1808,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar {
     position: sticky;
-    top: 60px;
+    top: 50%;
+    transform: translateY(-50%);
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
