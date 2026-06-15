@@ -1843,7 +1843,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .contact-info :is(.contact-link, time, address) {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: var(--fw-300);
   }
 
