@@ -407,7 +407,7 @@ main {
 
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
-  font-size: var(--fs-7);
+  font-size: var(--8);
 }
 
 .contact-info address { font-style: normal; }
@@ -1795,8 +1795,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .main-content {
-    min-width: 72%;
-    width: 72%;
+    min-width: 70%;
+    width: 70%;
     margin: 0;
   }
 
@@ -1843,7 +1843,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .contact-info :is(.contact-link, time, address) {
-    --fs-7: 14px;
+    --fs-7: 12px;
     font-weight: var(--fw-300);
   }
 
