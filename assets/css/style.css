@@ -1213,6 +1213,30 @@ textarea.form-input::-webkit-resizer { display: none; }
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
+/**
+ * responsive larger than 450px screen
+ */
+
+@media (min-width: 320px) {
+
+  /**
+   * client
+   */
+
+  .clients-item { min-width: calc(50% - 7px); }
+
+
+
+  /**
+   * #PORTFOLIO, BLOG 
+   */
+
+  .project-img,
+  .blog-banner-box { height: auto; }
+
+}
+
+
 
 /**
  * responsive larger than 450px screen
@@ -1224,7 +1248,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * client
    */
 
-  .clients-item { min-width: calc(33.33% - 10px); }
+  .clients-item { min-width: calc(33.33% - 20px); }
 
 
 
