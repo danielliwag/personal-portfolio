@@ -185,3 +185,28 @@ navigationLinks.forEach((link) => {
 
   });
 });
+
+
+emailjs.init("Xs3FkFoMKPjjJJTQv");
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    emailjs.sendForm(
+      "service_u1hpq4r",
+      "template_to90gqd",
+      this
+    )
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Failed to send message.");
+    });
+
+});
