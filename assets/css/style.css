@@ -577,7 +577,12 @@ main {
   box-shadow: var(--shadow-1);
 }
 
-.testimonials-item-title { margin-bottom: 7px; }
+.testimonials-item-title { 
+  margin-bottom: 7px;
+  white-space: nowrap;      /* Keeps the title strictly on one line */
+  overflow: hidden;         /* Hides the text that overflows the container */
+  text-overflow: ellipsis;
+ }
 
 .testimonials-text {
   color: var(--light-gray);
@@ -695,7 +700,6 @@ main {
   font-size: var(--fs-6);
   color: var(--light-gray-70);
   font-weight: var(--fw-300);
-  margin-bottom: 10px;
 }
 
 .modal-content p {
@@ -705,6 +709,23 @@ main {
   line-height: 1.6;
 }
 
+.modal-meta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;   
+}
+
+.modal-company {
+  font-size: var(--fs-6);
+  color: var(--light-gray-70);
+  font-weight: var(--fw-400);     
+}
+
+.modal-separator {
+  font-size: var(--fs-6);
+  color: var(--light-gray-70);
+}
 
 /**
  * #clients 
@@ -1439,8 +1460,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   .testimonials-avatar-box img { width: 80px; }
 
   .testimonials-item-title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-left: 95px;
+    margin-top: -12px;
   }
 
   .testimonials-text {
