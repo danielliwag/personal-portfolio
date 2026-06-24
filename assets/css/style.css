@@ -579,8 +579,8 @@ main {
 
 .testimonials-item-title { 
   margin-bottom: 7px;
-  white-space: nowrap;      /* Keeps the title strictly on one line */
-  overflow: hidden;         /* Hides the text that overflows the container */
+  white-space: nowrap;
+  overflow: hidden;         
   text-overflow: ellipsis;
  }
 
@@ -1457,7 +1457,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     border-radius: 20px;
   }
 
-  .testimonials-avatar-box img { width: 80px; }
+  .testimonials-avatar-box img { 
+    width: 80px;
+   }
 
   .testimonials-item-title {
     margin-bottom: 20px;
