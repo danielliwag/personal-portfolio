@@ -473,11 +473,40 @@
                 </p>
               </div>
 
+              <a href="#" class="cert-link" onclick="openCertPopup(event, 'assets/images/DE_cert.png')">
+              See Certificate <span>↗</span>
+              </a>
+
             </div>
 
           </section>
 
         </div>
+        
+      <div id="cert-popup" class="cert-popup-container" onclick="closeCertPopup()">
+      <div class="cert-popup-content" onclick="event.stopPropagation()">
+    
+        <!-- Close button stays isolated on top -->
+        <button class="cert-close-btn" onclick="closeCertPopup()">&times;</button>
+    
+        <!-- Wrapper to house the image and hover icon layer -->
+        <div class="popup-image-wrapper">
+        <a href="https://datacamp.com" target="_blank" rel="noopener noreferrer" class="cert-lightbox-link">
+        
+          <div class="cert-hover-overlay">
+          <!-- The floating golden eye icon component structure -->
+          <div class="cert-eye-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          </div>
+          <!-- The main high-res certificate PNG -->
+          <img id="cert-img-holder" src="./assets/images/DE_cert.png" alt="DataCamp Certificate View">
+
+        </a>
+      </div>
+
+  </div>
+</div>
 
 
         <!--

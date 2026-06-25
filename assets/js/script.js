@@ -210,3 +210,18 @@ document
     });
 
 });
+
+function openCertPopup(event, imagePath) {
+  event.preventDefault(); // Block webpage jumping defaults
+  
+  const container = document.getElementById('cert-popup');
+  const targetImage = document.getElementById('cert-img-holder');
+  
+  targetImage.src = imagePath;      // Load dynamic file target path
+  container.classList.add('active'); // Fire CSS transition styles
+}
+
+function closeCertPopup() {
+  const container = document.getElementById('cert-popup');
+  container.classList.remove('active');
+}
