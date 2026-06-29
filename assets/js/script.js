@@ -33,6 +33,16 @@ const certPopup = document.getElementById('cert-popup');
 const certImgHolder = document.getElementById('cert-img-holder');
 const popupLightboxLink = document.querySelector('[data-popup-lightbox-link]');
 
+const preloadedImages = {};
+testimonialsItems.forEach(item => {
+  const highResImgUrl = item.getAttribute('data-cert-img');
+  if (highResImgUrl && !preloadedImages[highResImgUrl]) {
+    const img = new Image();
+    img.src = highResImgUrl; 
+    preloadedImages[highResImgUrl] = img;
+  }
+});
+
 // Handle open event for certificate description modals
 testimonialsItems.forEach(item => {
   item.addEventListener('click', function () {
@@ -60,9 +70,10 @@ testimonialsItems.forEach(item => {
       event.preventDefault();
       openCertPopup(certificateImg, externalVerificationUrl);
     };
-
+  requestAnimationFrame(() => {
     modalContainer.classList.add('active');
     overlay.classList.add('active');
+    });
   });
 });
 
