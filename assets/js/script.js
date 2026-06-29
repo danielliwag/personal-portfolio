@@ -16,43 +16,74 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
+// certification variables
+const testimonialsItems = document.querySelectorAll('[data-testimonials-item]');
+const modalContainer = document.querySelector('[data-modal-container]');
+const modalCloseBtn = document.querySelector('[data-modal-close-btn]');
+const overlay = document.querySelector('[data-overlay]');
 
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
+const modalImg = document.querySelector('[data-modal-img-tag]');
+const modalTitle = document.querySelector('[data-modal-title]');
+const modalCompany = document.querySelector('[data-modal-company]');
+const modalDate = document.querySelector('[data-modal-date]');
+const modalDesc = document.querySelector('[data-modal-desc]');
+const modalCertBtn = document.querySelector('[data-modal-cert-btn]');
 
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
+const certPopup = document.getElementById('cert-popup');
+const certImgHolder = document.getElementById('cert-img-holder');
+const popupLightboxLink = document.querySelector('[data-popup-lightbox-link]');
 
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
+// Handle open event for certificate description modals
+testimonialsItems.forEach(item => {
+  item.addEventListener('click', function () {
+    const title = this.getAttribute('data-cert-title');
+    const company = this.getAttribute('data-cert-company');
+    const dateText = this.getAttribute('data-cert-date');
+    const dateTimeVal = this.getAttribute('data-cert-datetime');
+    const description = this.querySelector('[data-testimonials-text] p').textContent.trim();
+    const avatarSrc = this.querySelector('[data-testimonials-avatar]').src;
+    
+    const certificateImg = this.getAttribute('data-cert-img');
+    const externalVerificationUrl = this.getAttribute('data-cert-url');
 
-  testimonialsItem[i].addEventListener("click", function () {
+    // Inject active context details into text modal UI slots
+    modalTitle.textContent = title;
+    modalCompany.textContent = company;
+    modalDesc.textContent = description;
+    modalDate.textContent = dateText;
+    modalDate.setAttribute('datetime', dateTimeVal);
+    modalImg.src = avatarSrc;
+    modalImg.alt = company;
 
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    // Map high-res asset routing functions inside target execution bounds
+    modalCertBtn.onclick = function (event) {
+      event.preventDefault();
+      openCertPopup(certificateImg, externalVerificationUrl);
+    };
 
-    testimonialsModalFunc();
-
+    modalContainer.classList.add('active');
+    overlay.classList.add('active');
   });
+});
 
+// Secondary High-Res Certificate Popups Layout Manager
+function openCertPopup(imgSrc, verificationUrl) {
+  certImgHolder.src = imgSrc;
+  popupLightboxLink.href = verificationUrl;
+  certPopup.classList.add('active');
 }
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+function closeCertPopup() {
+  certPopup.classList.remove('active');
+}
 
+function closeModal() {
+  modalContainer.classList.remove('active');
+  overlay.classList.remove('active');
+}
+
+modalCloseBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
 
 
 // custom select variables
@@ -210,18 +241,3 @@ document
     });
 
 });
-
-function openCertPopup(event, imagePath) {
-  event.preventDefault(); // Block webpage jumping defaults
-  
-  const container = document.getElementById('cert-popup');
-  const targetImage = document.getElementById('cert-img-holder');
-  
-  targetImage.src = imagePath;      // Load dynamic file target path
-  container.classList.add('active'); // Fire CSS transition styles
-}
-
-function closeCertPopup() {
-  const container = document.getElementById('cert-popup');
-  container.classList.remove('active');
-}

@@ -329,7 +329,7 @@
 
 
         <!--
-          - testimonials
+          - certifications
         -->
 
         <section class="testimonials">
@@ -339,10 +339,17 @@
           <ul class="testimonials-list has-scrollbar">
 
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card" 
+              data-testimonials-item 
+              data-cert-title="Data Engineer" 
+              data-cert-company="DataCamp" 
+              data-cert-date="14 June, 2021" 
+              data-cert-datetime="2021-06-14"
+              data-cert-img="./assets/images/DE_cert.png"
+              data-cert-url="https://www.datacamp.com/certificate/DE0016781965700">
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/datacamp-logo.svg" alt="Daniel Liwag" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/datacamp-logo.svg" alt="DataCamp logo" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Data Engineer</h4>
@@ -361,10 +368,17 @@
             </li>
 
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card" 
+              data-testimonials-item
+              data-cert-title="Data Engineer Associate" 
+              data-cert-company="DataCamp" 
+              data-cert-date="22 January, 2022" 
+              data-cert-datetime="2022-01-22"
+              data-cert-img="./assets/images/DEA_cert.png"
+              data-cert-url="https://www.datacamp.com">
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/datacamp-logo.svg" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/datacamp-logo.svg" alt="DataCamp logo" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Data Engineer Associate</h4>
@@ -383,10 +397,17 @@
             </li>
 
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card" 
+              data-testimonials-item
+              data-cert-title="SQL Associate" 
+              data-cert-company="DataCamp" 
+              data-cert-date="10 October, 2022" 
+              data-cert-datetime="2022-10-10"
+              data-cert-img="./assets/images/SQL_cert.png"
+              data-cert-url="https://www.datacamp.com">
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/datacamp-logo.svg" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/datacamp-logo.svg" alt="DataCamp logo" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>SQL Associate</h4>
@@ -405,21 +426,24 @@
             </li>
 
             <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+              <div class="content-card" 
+              data-testimonials-item
+              data-cert-title="Google Data Analytics" 
+              data-cert-company="Coursera" 
+              data-cert-date="05 March, 2023" 
+              data-cert-datetime="2023-03-05"
+              data-cert-img="./assets/images/GDA_cert.png"
+              data-cert-url="https://www.coursera.org">
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/coursera-logo.svg" alt="Henry william" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/coursera-logo.svg" alt="Coursera logo" width="60" data-testimonials-avatar>
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Google Data Analytics</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
                 </div>
 
@@ -432,7 +456,7 @@
 
 
         <!--
-          - testimonials modal
+          - certifications modal
         -->
 
         <div class="modal-container" data-modal-container>
@@ -447,10 +471,8 @@
 
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/datacamp-text.png" alt="datacamp" width="80" data-modal-img>
+                <img src="./assets/images/datacamp.svg" alt="datacamp" width="80" data-modal-img-tag>
               </figure>
-
-              <!-- <img src="./assets/images/icon-quote.svg" alt="quote icon"> -->
             </div>
 
             <div class="modal-content">
@@ -458,22 +480,16 @@
               <h4 class="h3 modal-title" data-modal-title></h4>
               
               <div class="modal-meta-wrapper">
-              <span class="modal-company">DataCamp</span>
+              <span class="modal-company" data-modal-company></span>
               <span class="modal-separator">—</span>
-              <time datetime="2021-06-14">14 June, 2021</time>
+              <time data-modal-date datetime=""></time>
               </div>
 
               <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
+                <p data-modal-desc></p>
               </div>
 
-              <a href="#" class="cert-link" onclick="openCertPopup(event, 'assets/images/DE_cert.png')">
+              <a href="#" class="cert-link" data-modal-cert-btn>
               See Certificate <span>↗</span>
               </a>
 
@@ -491,7 +507,7 @@
     
         <!-- Wrapper to house the image and hover icon layer -->
         <div class="popup-image-wrapper">
-        <a href="https://datacamp.com" target="_blank" rel="noopener noreferrer" class="cert-lightbox-link">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="cert-lightbox-link" data-popup-lightbox-link>
         
           <div class="cert-hover-overlay">
           <!-- The floating golden eye icon component structure -->
@@ -500,7 +516,7 @@
           </div>
           </div>
           <!-- The main high-res certificate PNG -->
-          <img id="cert-img-holder" src="./assets/images/DE_cert.png" alt="DataCamp Certificate View">
+          <img id="cert-img-holder" src="" alt="Certificate View">
 
         </a>
       </div>
