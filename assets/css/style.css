@@ -250,7 +250,7 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--orange-yellow-crayola);
+  background: var(--text-gradient-yellow);
   border-radius: 5px;
 }
 
@@ -735,7 +735,7 @@ main {
   display: inline-flex;
   align-items: center;
   margin-top: 15px;
-  color: var(--muted-orange-yellow);
+  color: var(--orange-yellow-crayola);
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   text-decoration: none;
